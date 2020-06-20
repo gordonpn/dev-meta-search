@@ -1,4 +1,5 @@
 import { theme as chakraTheme } from "@chakra-ui/core";
+import React from "react";
 
 const fonts = { ...chakraTheme.fonts, mono: `'Menlo', monospace` };
 
