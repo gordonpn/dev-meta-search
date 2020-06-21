@@ -18,10 +18,14 @@ export const Hero = ({ title, subtitle }: Props): ReactElement => (
     flexDirection="column"
     justifyContent="center"
     alignItems="center"
-    height="50vh"
+    height="30vh"
   >
-    <HeadingStyled fontSize="5vw">{title}</HeadingStyled>
-    <HeadingStyled fontSize="3vw">{subtitle}</HeadingStyled>
+    <HeadingStyled fontSize="5vw" mb={4}>
+      {title}
+    </HeadingStyled>
+    <HeadingStyled fontSize="3vw" mb={4}>
+      {subtitle}
+    </HeadingStyled>
   </Flex>
 );
 
