@@ -3,15 +3,13 @@ import { Container } from "@/components/Container";
 import { DarkModeSwitch } from "@/components/DarkModeSwitch";
 import Footer from "@/components/Footer";
 import React, { ReactElement } from "react";
-import SearchButton from "@/components/SearchButton";
-import SearchBox from "@/components/SearchBox";
 import Description from "@/components/Description";
+import Search from "@/components/Search";
 
 const Index = (): ReactElement => (
   <Container>
     <Hero title={"Meta Search Engine"} subtitle={"for Developers"} />
-    <SearchBox />
-    <SearchButton />
+    <Search />
     <Description />
     <DarkModeSwitch />
     <Footer />

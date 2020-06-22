@@ -9,6 +9,7 @@ export default function Footer(): ReactElement {
         justifyContent="center"
         alignItems="center"
         marginTop="10rem"
+        marginBottom="2rem"
       >
         <Text fontSize="xs">
           &copy;
