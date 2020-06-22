@@ -1,4 +1,4 @@
-import { Input, Flex, Button } from "@chakra-ui/core";
+import { Button, Flex, Input } from "@chakra-ui/core";
 import React, { ReactElement, useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import sites from "src/sites";
@@ -41,7 +41,7 @@ export default function Search(): ReactElement {
         <Input
           size="lg"
           onKeyPress={handleKeyPress}
-          onChange={(event) => setUserInput(event.target.value)}
+          onChange={(event: any) => setUserInput(event.target.value)}
         />
       </Flex>
       <Flex flexDirection="row">

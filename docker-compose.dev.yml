@@ -1,0 +1,6 @@
+version: "3.8"
+services:
+  frontend:
+    container_name: dev-meta-search-site-dev
+    ports:
+      - "127.0.0.1:3000:80"
