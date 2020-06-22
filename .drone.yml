@@ -1,0 +1,154 @@
+---
+kind: pipeline
+type: docker
+name: notification
+
+trigger:
+  event: [ push, pull_request ]
+
+steps:
+  - name: slack before
+    image: plugins/slack
+    settings:
+      channel: drone-ci
+      template: >
+        {{build.event}} on branch {{build.branch}} from repo {{repo.name}}
+
+        build #{{build.number}} started!
+
+        {{build.link}}
+      webhook:
+        from_secret: SLACK_WEBHOOK_URL
+---
+kind: pipeline
+type: docker
+name: build and publish
+
+platform:
+  os: linux
+  arch: amd64
+
+trigger:
+  event: [ push, pull_request ]
+  branch:
+    exclude:
+      - master
+
+steps:
+  - name: publish
+    image: gordonpn/docker-buildx-drone
+    environment:
+      DOCKER_TOKEN:
+        from_secret: DOCKER_TOKEN
+    volumes:
+      - name: dockersock
+        path: /var/run/docker.sock
+    commands:
+      - /drone/src/docker/build.sh
+
+
+volumes:
+  - name: dockersock
+    host:
+      path: /var/run/docker.sock
+---
+kind: pipeline
+type: docker
+name: security
+
+trigger:
+  event: [ push, pull_request ]
+  branch:
+    exclude:
+      - master
+
+depends_on:
+  - build and publish
+
+steps:
+  - name: trivy scan
+    image: docker
+    failure: ignore
+    environment:
+      GITHUB_TOKEN:
+        from_secret: GITHUB_TOKEN
+    commands:
+      - docker run aquasec/trivy --ignore-unfixed --no-progress --exit-code 1 --severity CRITICAL repo https://github.com/gordonpn/dev-meta-search
+      - docker run aquasec/trivy --ignore-unfixed --no-progress --exit-code 1 --severity CRITICAL gordonpn/dev-meta-search-site
+    volumes:
+      - name: dockersock
+        path: /var/run/docker.sock
+  - name: snyk scan
+    image: gordonpn/snyk-cli-drone
+    failure: ignore
+    environment:
+      SNYK_TOKEN:
+        from_secret: SNYK_TOKEN
+    volumes:
+      - name: dockersock
+        path: /var/run/docker.sock
+    commands:
+      - snyk test --severity-threshold=high https://github.com/gordonpn/dev-meta-search
+#      - snyk test --docker gordonpn/personal-site:latest --file=Dockerfile --exclude-base-image-vulns
+
+volumes:
+  - name: dockersock
+    host:
+      path: /var/run/docker.sock
+---
+kind: pipeline
+type: docker
+name: deploy
+
+trigger:
+  event:
+    - push
+  branch:
+    - master
+
+steps:
+  - name: deploy prod
+    image: docker/compose:1.25.5
+    environment:
+      TZ: America/Montreal
+    volumes:
+      - name: dockersock
+        path: /var/run/docker.sock
+    commands:
+      - /drone/src/docker/deploy.sh
+
+volumes:
+  - name: dockersock
+    host:
+      path: /var/run/docker.sock
+
+---
+kind: pipeline
+type: docker
+name: notification after
+
+trigger:
+  event: [ push, pull_request ]
+
+steps:
+  - name: slack after
+    image: plugins/slack
+    failure: ignore
+    settings:
+      channel: drone-ci
+      template: >
+        {{repo.name}}:
+        {{#success build.status}}
+        build #{{build.number}} succeeded
+        {{else}}
+        build #{{build.number}} failed
+        {{/success}}
+      webhook:
+        from_secret: SLACK_WEBHOOK_URL
+    when:
+      status: [ success, failure ]
+
+depends_on:
+  - build and publish
+  - security
+  - deploy
