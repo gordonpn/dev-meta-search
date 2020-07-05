@@ -39,6 +39,8 @@ export default function Search(): ReactElement {
     <>
       <Flex width="80vw" flexDirection={"row"}>
         <Input
+          variant="flushed"
+          placeholder="Type here..."
           size="lg"
           onKeyPress={handleKeyPress}
           onChange={(event: any) => setUserInput(event.target.value)}
