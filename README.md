@@ -3,7 +3,7 @@
 ---
 
 [![Build Status](https://drone.gordon-pn.com/api/badges/gordonpn/dev-meta-search/status.svg)](https://drone.gordon-pn.com/gordonpn/dev-meta-search)
-[![Uptime Robot](https://badgen.net/uptime-robot/status/m785314563-47a09fd2b0e8619f429b7a4f)](https://deals.gordon-pn.com)
+[![Uptime Robot](https://badgen.net/uptime-robot/status/m785513881-2584a61d32ce44fbda6f8c54)](https://search.gordon-pn.com)
 ![Last commit on develop](https://badgen.net/github/last-commit/gordonpn/dev-meta-search/develop)
 ![License](https://badgen.net/github/license/gordonpn/dev-meta-search)
 
