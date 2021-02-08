@@ -2,8 +2,8 @@
 
 ---
 
+[![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 [![Build Status](https://drone.gordon-pn.com/api/badges/gordonpn/dev-meta-search/status.svg)](https://drone.gordon-pn.com/gordonpn/dev-meta-search)
-[![Uptime Robot](https://badgen.net/uptime-robot/status/m785513881-2584a61d32ce44fbda6f8c54)](https://search.gordon-pn.com)
 ![Last commit on develop](https://badgen.net/github/last-commit/gordonpn/dev-meta-search/develop)
 ![License](https://badgen.net/github/license/gordonpn/dev-meta-search)
 
@@ -52,7 +52,7 @@ You may open an issue for discussion.
 
 ## Authors
 
-Myself [@gordonpn](https://github.com/gordonpn)
+[@gordonpn](https://github.com/gordonpn)
 
 ## License
 
