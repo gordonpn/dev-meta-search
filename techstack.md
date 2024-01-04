@@ -1,7 +1,8 @@
 <!--
---- Readme.md Snippet without images Start ---
+&lt;--- Readme.md Snippet without images Start ---&gt;
 ## Tech Stack
 gordonpn/dev-meta-search is built on the following main stack:
+
 - [Drone.io](https://drone.io/) – Continuous Integration
 - [Node.js](http://nodejs.org/) – Frameworks (Full Stack)
 - [React](https://reactjs.org/) – Javascript UI Libraries
@@ -17,11 +18,13 @@ gordonpn/dev-meta-search is built on the following main stack:
 - [Docker](https://www.docker.com/) – Virtual Machine Platforms & Containers
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet without images End ---
 
---- Readme.md Snippet with images Start ---
+&lt;--- Readme.md Snippet without images End ---&gt;
+
+&lt;--- Readme.md Snippet with images Start ---&gt;
 ## Tech Stack
 gordonpn/dev-meta-search is built on the following main stack:
+
 - <img width='25' height='25' src='https://img.stackshare.io/service/668/R_wMcCqN_400x400.png' alt='Drone.io'/> [Drone.io](https://drone.io/) – Continuous Integration
 - <img width='25' height='25' src='https://img.stackshare.io/service/1011/n1JRsFeB_400x400.png' alt='Node.js'/> [Node.js](http://nodejs.org/) – Frameworks (Full Stack)
 - <img width='25' height='25' src='https://img.stackshare.io/service/1020/OYIaJ1KK.png' alt='React'/> [React](https://reactjs.org/) – Javascript UI Libraries
@@ -37,14 +40,15 @@ gordonpn/dev-meta-search is built on the following main stack:
 - <img width='25' height='25' src='https://img.stackshare.io/service/586/n4u37v9t_400x400.png' alt='Docker'/> [Docker](https://www.docker.com/) – Virtual Machine Platforms & Containers
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet with images End ---
+
+&lt;--- Readme.md Snippet with images End ---&gt;
 -->
 <div align="center">
 
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [gordonpn/dev-meta-search](https://github.com/gordonpn/dev-meta-search)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|37<br/>Tools used|11/09/23 <br/>Report generated|
+|37<br/>Tools used|01/04/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -223,4 +227,4 @@ Full tech stack [here](/techstack.md)
 <br/>
 <div align='center'>
 
-Generated via [Stack File](https://github.com/apps/stack-file)
+Generated via [Stack File](https://github.com/marketplace/stack-file)
