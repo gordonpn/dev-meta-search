@@ -2,7 +2,7 @@ repo_name: gordonpn/dev-meta-search
 report_id: ad704c7f6ae47482ad9ddaa9d04517e2
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-05T09:26:33+00:00'
+timestamp: '2024-02-29T18:02:04+00:00'
 requested_by: gordonpn
 provider: github
 branch: master
@@ -31,7 +31,7 @@ tools:
   detection_source_url: https://github.com/gordonpn/dev-meta-search
   detection_source: Repo Metadata
 - name: Next.js
-  description: 'A small framework for server-rendered universal JavaScript apps '
+  description: A small framework for server-rendered universal JavaScript apps
   website_url: https://nextjs.org/
   version: 9.4.4
   open_source: true
@@ -145,7 +145,7 @@ tools:
   last_updated_by: Gordon Pham-Nguyen
   last_updated_on: 2020-06-22 20:37:44.000000000 Z
 - name: Prettier
-  description: 'Prettier is an opinionated code formatter. '
+  description: Prettier is an opinionated code formatter.
   website_url: https://prettier.io/
   version: 2.0.5
   license: MIT
